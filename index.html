@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeginnerAI — Build with AI Today</title>
+    <meta name="description" content="One curated newsletter. One working automation. Zero hype. Every Monday. Join 2,500+ builders getting clarity.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Prevent FOUC for dark mode -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <!-- Main Landing Page Content -->
+    <div id="main-content">
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">BeginnerAI</a>
+            <nav class="header-nav">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <a href="#subscribe" class="btn btn-primary btn-sm">Subscribe</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <!-- Dateline stamp -->
+                    <div class="dateline fade-in">
+                        <span>Every week</span>
+                        <span class="separator"></span>
+                        <span>3 min read</span>
+                        <span class="separator"></span>
+                        <span>1 build</span>
+                    </div>
+
+                    <h1 class="hero-title fade-in">Build with AI <span class="ink">today.</span></h1>
+
+                    <p class="hero-subtitle fade-in">
+                        One curated newsletter. One working automation. Zero hype.<br>
+                        <strong>Every week.</strong>
+                    </p>
+
+                    <form id="subscribe" class="email-form beehiiv-form fade-in" data-beehiiv-form>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+                            <button type="submit" class="btn btn-primary">Join 2,500+ Builders</button>
+                        </div>
+                    </form>
+
+                    <div class="trust-badges fade-in">
+                        <span>
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+                            Free
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+                            Weekly
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+                            Unsubscribe anytime
+                        </span>
+                    </div>
+                </div>
+
+                <!-- What You Can Expect -->
+                <div class="issue-preview fade-in">
+                    <div class="issue-preview-header">
+                        <span class="issue-preview-dot"></span>
+                        <span class="issue-preview-label">What You Can Expect</span>
+                    </div>
+                    <div class="issue-preview-subject">
+                        Build a Claude-powered email triage system
+                    </div>
+                    <ul class="issue-preview-list">
+                        <li>The 4 videos worth your time this week</li>
+                        <li>Why Claude's new feature changes everything</li>
+                        <li>Automating email sorting without code</li>
+                    </ul>
+                    <div class="issue-preview-build">
+                        <strong>This week's build:</strong> Email triage automation (n8n)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LOGO STRIP - Featured Tools
+         ============================================ -->
+    <section class="logo-strip">
+        <div class="container">
+            <div class="logo-strip-content">
+                <p class="logo-strip-caption">Featuring workflows and updates across the tools builders actually use.</p>
+                <div class="logo-strip-logos">
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        <span>n8n</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <span>Claude</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364l2.0201-1.1638a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.4066-.6898zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997z"/>
+                        </svg>
+                        <span>ChatGPT</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                        </svg>
+                        <span>Gemini</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l6.9 3.45L12 11.09 5.1 7.63 12 4.18zM4 8.82l7 3.5v7.36l-7-3.5V8.82zm9 10.86v-7.36l7-3.5v7.36l-7 3.5z"/>
+                        </svg>
+                        <span>Make</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M13 3L4 14h7l-2 7 9-11h-7l2-7z"/>
+                        </svg>
+                        <span>Zapier</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        <span>Sora</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2z"/>
+                        </svg>
+                        <span>NotebookLM</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span>Lovable</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M8 3v2H6v2H4v6h2v2h2v2h2v2h4v-2h2v-2h2v-2h2V7h-2V5h-2V3H8zm0 2h8v2h2v6h-2v2h-2v2h-4v-2H8v-2H6V7h2V5z"/>
+                        </svg>
+                        <span>Replit</span>
+                    </div>
+                    <div class="logo-strip-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        <span>Cursor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY SIGN UP SECTION - Editorial Callout
+         ============================================ -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-callout fade-in">
+                <h2 class="problem-title">Why sign up?</h2>
+                <p class="problem-subtitle">Keeping on top of AI is overwhelming. We've been there. Every week it's the same:</p>
+
+                <ul class="problem-list">
+                    <li>47 tabs of "breaking AI news" that doesn't matter</li>
+                    <li>Tutorials you bookmark but never finish</li>
+                    <li>Analysis with zero action items</li>
+                    <li>Hype cycles with no real utility</li>
+                </ul>
+
+                <div class="problem-punchline">
+                    <p class="highlight">The BeginnerAI newsletter cuts through the noise, so you can build quicker.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SOLUTION SECTION
+         ============================================ -->
+    <section class="solution">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">What lands in your inbox every week</h2>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-card fade-in">
+                    <div class="solution-card-label">01 / Signal</div>
+                    <h3>The Videos Worth Watching</h3>
+                    <p>We watch dozens of AI builders each week and surface the 3-5 that actually teach you something. No fluff, just signal.</p>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-card-label">02 / Build</div>
+                    <h3>One Build That Works</h3>
+                    <p>A functional automation you complete in under an hour. N8N, Make, Claude Code—tools designed for non-coders.</p>
+                </div>
+
+                <div class="solution-card fade-in">
+                    <div class="solution-card-label">03 / Pulse</div>
+                    <h3>The Pulse of AI</h3>
+                    <p>AI news that matters to builders. Nothing more, nothing less.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIAL MARQUEE
+         ============================================ -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <div class="marquee-testimonial">
+                    <blockquote>"Finally—AI news that doesn't waste my time plus builds I can actually complete."</blockquote>
+                    <cite>— Sarah K., Content Creator</cite>
+                </div>
+                <div class="marquee-testimonial">
+                    <blockquote>"I've built more in 8 weeks with BeginnerAI than in 6 months of YouTube tutorials."</blockquote>
+                    <cite>— Mike R., Marketing Manager</cite>
+                </div>
+                <div class="marquee-testimonial">
+                    <blockquote>"The weekly builds actually stick. I've automated half my workflow and I'm not even technical."</blockquote>
+                    <cite>— Jamie L., Freelance Designer</cite>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-testimonial">
+                    <blockquote>"Finally—AI news that doesn't waste my time plus builds I can actually complete."</blockquote>
+                    <cite>— Sarah K., Content Creator</cite>
+                </div>
+                <div class="marquee-testimonial">
+                    <blockquote>"I've built more in 8 weeks with BeginnerAI than in 6 months of YouTube tutorials."</blockquote>
+                    <cite>— Mike R., Marketing Manager</cite>
+                </div>
+                <div class="marquee-testimonial">
+                    <blockquote>"The weekly builds actually stick. I've automated half my workflow and I'm not even technical."</blockquote>
+                    <cite>— Jamie L., Freelance Designer</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+         ============================================ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Common Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        Is this for me?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>This newsletter is perfect if you're new to AI tools and automation, tired of hype but want to stay informed, want to build useful automations rather than chase trends, are willing to spend an hour weekly implementing, and like free stuff.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        Why an email instead of a course?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Courses go to die in your bookmarks. Emails arrive in your flow, encouraging small, weekly implementations that actually stick.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        How often do you send emails?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Once a week. No spam. Just one high-impact automation build per week.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        Is this technical?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Zero coding required. We use no-code tools and visual builders so complete beginners can build real products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FINAL CTA SECTION
+         ============================================ -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="dateline fade-in">
+                <span>Every week</span>
+                <span class="separator"></span>
+                <span>3 min read</span>
+                <span class="separator"></span>
+                <span>1 build</span>
+            </div>
+
+            <h2 class="section-title fade-in">Start your first build</h2>
+            <p class="section-subtitle fade-in">Join BeginnerAI: the implementation email designed to take you from overwhelmed to building real world automations.</p>
+
+            <form class="email-form beehiiv-form fade-in" data-beehiiv-form>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+                    <button type="submit" class="btn btn-primary">Join Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="logo">BeginnerAI</a>
+            <p>© 2025 BeginnerAI. All rights reserved.</p>
+        </div>
+    </footer>
+    </div><!-- End main-content -->
+
+    <!-- ============================================
+         SUCCESS PAGE
+         Shown after successful form submission
+         ============================================ -->
+    <div id="success-page" class="success-page" style="display: none;">
+        <div class="success-content">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            <h1 class="success-title">Congratulations, you're registered!</h1>
+            <p class="success-subtitle">Check your email to confirm your subscription.<br>Your first newsletter arrives next week.</p>
+            <button id="return-home" class="btn btn-primary">Return to Home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
