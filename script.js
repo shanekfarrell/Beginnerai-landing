@@ -203,12 +203,11 @@ function initSmoothScroll() {
 }
 
 /* ============================================
-   BEEHIIV FORM HANDLING
-   Submits to Beehiiv and shows success page
+   NEWSLETTER FORM HANDLING
+   Submits to n8n webhook for Beehiiv integration
    ============================================ */
 
-// IMPORTANT: Replace with your actual Beehiiv publication ID
-const BEEHIIV_PUBLICATION_ID = 'YOUR_BEEHIIV_PUBLICATION_ID';
+const N8N_WEBHOOK_URL = 'https://shane45.app.n8n.cloud/webhook/beehive-subscribe';
 
 function initBeehiivForms() {
     const forms = document.querySelectorAll('[data-beehiiv-form]');
@@ -240,38 +239,37 @@ function initBeehiivForms() {
             form.classList.add('loading');
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Subscribing';
+            submitBtn.textContent = 'Subscribing...';
 
             try {
-                // Submit to Beehiiv
-                const response = await fetch(`https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`, {
+                // Submit to n8n webhook
+                const response = await fetch(N8N_WEBHOOK_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        email: email,
-                        reactivate_existing: true,
-                        send_welcome_email: true
+                        email: email
                     })
                 });
 
-                if (response.ok || response.status === 201 || response.status === 200) {
+                if (response.ok) {
                     showSuccessPage();
                 } else {
-                    // If API fails, try iframe fallback or show success anyway
-                    // Many Beehiiv integrations use iframe embeds which won't return proper CORS responses
-                    showSuccessPage();
+                    // Show error state
+                    submitBtn.textContent = 'Error - Try Again';
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                    }, 3000);
                 }
             } catch (error) {
-                // For CORS issues with Beehiiv API, use embedded form fallback
-                // Show success page - the iframe embed approach handles actual submission
-                console.log('Using fallback submission method');
-                submitToBeehiivEmbed(email);
-                showSuccessPage();
+                console.error('Subscription error:', error);
+                submitBtn.textContent = 'Error - Try Again';
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                }, 3000);
             } finally {
                 form.classList.remove('loading');
-                submitBtn.textContent = originalText;
             }
         });
     });
@@ -302,42 +300,6 @@ function initBeehiivForms() {
             mainContent.style.display = 'block';
             window.scrollTo(0, 0);
         }
-    }
-
-    // Fallback: Submit via hidden iframe for Beehiiv embed compatibility
-    function submitToBeehiivEmbed(email) {
-        // Create a hidden iframe to submit to Beehiiv's embed endpoint
-        // This is a fallback for when the API has CORS restrictions
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.name = 'beehiiv-submit-frame';
-        document.body.appendChild(iframe);
-
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = `https://embeds.beehiiv.com/subscribe`;
-        form.target = 'beehiiv-submit-frame';
-
-        const pubInput = document.createElement('input');
-        pubInput.type = 'hidden';
-        pubInput.name = 'publication_id';
-        pubInput.value = BEEHIIV_PUBLICATION_ID;
-        form.appendChild(pubInput);
-
-        const emailField = document.createElement('input');
-        emailField.type = 'hidden';
-        emailField.name = 'email';
-        emailField.value = email;
-        form.appendChild(emailField);
-
-        document.body.appendChild(form);
-        form.submit();
-
-        // Cleanup after submission
-        setTimeout(() => {
-            document.body.removeChild(form);
-            document.body.removeChild(iframe);
-        }, 2000);
     }
 }
 
