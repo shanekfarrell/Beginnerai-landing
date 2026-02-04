@@ -320,6 +320,14 @@ function initBeehiivForms() {
             }
         }
     });
+
+    // Check if page loaded with /success URL
+    if (window.location.pathname === '/success') {
+        if (mainContent && successPage) {
+            mainContent.style.display = 'none';
+            successPage.style.display = 'flex';
+        }
+    }
 }
 
 // Initialize Beehiiv forms
