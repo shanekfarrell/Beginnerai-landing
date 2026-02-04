@@ -286,6 +286,8 @@ function initBeehiivForms() {
             mainContent.style.display = 'none';
             successPage.style.display = 'flex';
             window.scrollTo(0, 0);
+            // Update URL to /success
+            history.pushState({ page: 'success' }, '', '/success');
             // Clear form inputs
             forms.forEach(form => {
                 const emailInput = form.querySelector('input[type="email"]');
@@ -299,8 +301,25 @@ function initBeehiivForms() {
             successPage.style.display = 'none';
             mainContent.style.display = 'block';
             window.scrollTo(0, 0);
+            // Update URL back to home
+            history.pushState({ page: 'home' }, '', '/');
         }
     }
+
+    // Handle browser back button
+    window.addEventListener('popstate', function(e) {
+        if (e.state && e.state.page === 'success') {
+            if (mainContent && successPage) {
+                mainContent.style.display = 'none';
+                successPage.style.display = 'flex';
+            }
+        } else {
+            if (mainContent && successPage) {
+                successPage.style.display = 'none';
+                mainContent.style.display = 'block';
+            }
+        }
+    });
 }
 
 // Initialize Beehiiv forms
