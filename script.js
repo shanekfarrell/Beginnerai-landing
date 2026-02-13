@@ -207,7 +207,7 @@ function initSmoothScroll() {
    Submits to n8n webhook for Beehiiv integration
    ============================================ */
 
-const N8N_WEBHOOK_URL = 'https://n8n.srv1362684.hstgr.cloud/webhook/beehiiv-subscribe';
+const N8N_WEBHOOK_URL = 'https://n8n.srfarrell.xyz/webhook/beehiiv-subscribe';
 
 function initBeehiivForms() {
     const forms = document.querySelectorAll('[data-beehiiv-form]');
